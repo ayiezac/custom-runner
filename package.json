@@ -6,17 +6,32 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . && npx htmlhint '**/*.{shtml,html,php}' && npx stylelint '**/*.{css,scss,js,ts,tsx,jsx}'",
+    "lint:fix": "eslint . --fix && npx stylelint '**/*.{css,scss,js}' --fix",
     "preview": "vite preview",
     "prepare": "husky"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.8",
+    "init": "^0.1.2",
+    "sass": "^1.92.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.2.1",
     "eslint": "^9.34.0",
     "eslint-plugin-format": "^1.0.1",
+    "htmlhint": "^1.6.3",
     "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "stylelint": "^16.23.1",
+    "stylelint-config-recommended": "^17.0.0",
+    "stylelint-config-standard": "^39.0.0",
+    "stylelint-config-standard-scss": "^15.0.1",
     "typescript": "~5.8.3",
     "vite": "^7.1.2"
+  },
+  "lint-staged": {
+    "*": "pnpm lint"
   }
 }
