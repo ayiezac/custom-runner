@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
-    "prepare": "husky || true"
+    "prepare": "husky"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
